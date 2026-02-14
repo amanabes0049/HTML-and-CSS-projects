@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic E-Commerce Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: darkblue;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+              display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+             
+        }
+        .products {
+            padding: 40px;
+            text-align: center;
+        }
+        .product {
+            width: 30%;           /* 3 items per row */
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        .product img {
+            width: 100%;
+        }
+        .product h3 {
+            margin-top: 0;
+        }
+        .product p {
+            color: #333;
+        }
+        .hero {
+            background: url("https://via.placeholder.com/1200x400") no-repeat center;
+            background-size: cover;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .product button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            border: none;
+            background-color: orange;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product button:hover {
+            background-color: darkorange;
+        }
+
+        .footer {
+            background-color: darkblue;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+        .rating {
+            color: goldenrod;
+            font-size: 20px;
+        }
+        .search-box {
+           display: flex;
+           width: 300px;
+           margin: 20px auto;}
+
+       .search-box input {
+              flex: 1;
+              padding: 8px;
+              border: 1px solid #ccc;
+              border-radius: 4px 0 0 4px;
+         }
+
+       .search-box button {
+              padding: 8px 12px;
+              background: orange;
+              border: none;
+             cursor: pointer;
+      }
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: black;
+        }
+
+        .faq-container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            padding: 15px;
+            cursor: pointer;
+            background: #333;
+            color: white;
+            font-weight: bold;
+        }
+        .faq-container p {
+            padding: 15px;
+            display: inline-block;
+            background: #f9f9f9;
+            color:blue;
+            font-weight: bold;
+        }
+        .feedback-box {
+            background-color: white;
+            padding: 30px;
+            border: 1px solid #ddd;
+            max-width: 800px;
+            margin: 0 auto; 
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .feedback-form input, .feedback-form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            width: 100%;
+            resize: vertical;
+        }
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse; 
+            justify-content: flex-end;
+            font-size: 1.5rem;
+        }
+
+        .star-rating input {
+            display: none; 
+        }
+
+        .star-rating label {
+            color: #ccc; 
+            cursor: pointer;
+            padding: 0 2px;
+            transition: color 0.2s;
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: #ffa41c; 
+        }
+
+        .feedback-btn {
+            background-color: #ffd814; 
+            border: 1px solid #fcd200;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: fit-content;
+            font-weight: bold;
+        }
+        .feedback-btn:hover { background-color: #f7ca00; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ShopEasy!!</h1>
+    </header>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Cart</a>
+      <a href="#">Contact</a>
+      <a href="#">Checkout</a> 
+    </nav>
+    <div class="hero">
+        Welcome to ShopEasy - Your One-Stop Online Store!
+    </div>
+    <div class="search-box">
+    <input type="search" placeholder="Search products...">
+    <button type="submit">Search</button>
+    </div>
+
+
+    <div class="products">
+        <h2>Our Products</h2>
+        <br><br>
+      <div class="container">
+        <div class="product">
+            <img src="titan.jpeg" alt="Product 1">
+            <h3>Analog watch of Titan</h3>
+            <p>Price - Rs.5,845 <del>7,999</del></p>
+            <p class="rating">
+                   ★★★★☆
+            </p>
+
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="skybag.jpg" alt="Product 2">
+            <h3>Bagpack - Skybags</h3>
+            <p>Price - Rs.1,499 <del>2,299</del></p>
+            <p class="rating">
+                   ★★★★☆
+            </p>
+            <button>Add to Cart</button>
+            </div>
+        <div class="product">
+            <img src="raymond.jpg" alt="Product 3">
+            <h3>Raymond Shirt</h3>
+            <p>Price - Rs.1,599 <del>1,799</del></p>
+            <p class="rating">
+                   ★★★★☆
+            </p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="suitcase.jpg" alt="Product 4">
+            <h3>American Tourister - Suitcase</h3>
+            <p>Price - Rs.6,699 <del>9,299</del></p>
+            <p class="rating">
+                   ★★★★☆
+            </p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+                <img src="shoes.jpg" alt="Product 5">
+                <h3>Adidas Shoes for men</h3>
+                <p>Price - Rs.3,999 <del>5,999</del></p>
+                <p class="rating">
+                   ★★★★☆
+                </p>
+                <button>Add to Cart</button>
+        </div>
+        <div class="product">
+                <img src="cargo.jpg" alt="Product 6">
+                <h3>Cargo Pant</h3>
+                <p>Price - Rs.1,299 <del>1,899</del></p>
+                <p class="rating">
+                   ★★★★☆
+                </p>
+                <button>Add to Cart</button>
+        </div>
+       </div>
+    </div>
+     <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+     <h4 class="faq-question">How do I place an order?</h4>
+     <p>Select a product, click "Add to Cart", then proceed to checkout.</p>
+
+     <h4 class="faq-question">What payment methods do you accept?</h4>
+     <p>We accept Credit/Debit cards, UPI, Net Banking and COD(Cash On Delivery).</p>
+
+     <h4 class="faq-question">What is your return policy?</h4>
+     <p>You can return products within 7 days of delivery.</p>
+    </div>
+     <h2>We Value Your Feedback!!...!!</h2>
+    <div class="feedback-box">
+            <p style="margin-bottom: 15px; color: #555;">Rate your experience and let us know how we can improve.</p>
+            
+            <form class="feedback-form" onsubmit="alert('Thank you for your rating and feedback!'); return false;">
+                
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span>Rating:</span>
+                    <div class="star-rating">
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars">★</label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars">★</label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars">★</label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars">★</label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">★</label>
+                    </div>
+                </div>
+
+                <input type="text" placeholder="Your Name (Optional)">
+                <input type="email" placeholder="Your Email">
+                <textarea rows="4" placeholder="Type your feedback here..."></textarea>
+                
+                <button type="submit" class="feedback-btn">Submit Feedback</button>
+            </form>
+        </div>
+
+    <div class="footer">
+        © 2026 ShopEasy | All Rights Reserved
+    </div>
+
+</body>
+
+</html>
